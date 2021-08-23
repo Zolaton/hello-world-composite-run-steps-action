@@ -2,7 +2,7 @@ on:
   #push:
   workflow_dispatch:
     inputs:
-      who-to-greet:
+      who-bye:
         description: 'Person to say goodbye'
         default: 'World'
         required: true
@@ -16,6 +16,6 @@ jobs:
       - id: foo
         uses: Zolaton/hello-world-composite-run-steps-action@main
         with:
-          who-to-greet: "${{ github.event.inputs.who-to-greet }}"
+          who-bye: "${{ github.event.inputs.who-bye }}"
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
